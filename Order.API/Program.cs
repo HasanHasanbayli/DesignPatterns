@@ -13,8 +13,6 @@ builder.Services.AddMassTransit(x =>
     });
 });
 
-// builder.Services.AddMassTransitHostedService();
-
 builder.Services.AddDbContext<ApplicationDbContext>(optionsBuilder =>
 {
     optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -22,7 +20,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(optionsBuilder =>
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
