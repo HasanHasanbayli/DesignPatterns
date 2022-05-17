@@ -70,6 +70,8 @@ public class OrderCreatedEventConsumer : IConsumer<OrderCreatedEvent>
                 OrderId = context.Message.OrderId,
                 Message = "Not enough stock"
             });
+            _logger.LogInformation($"Not enought stock for Buyer Id: {context.Message.BuyerId}");
+
         }
     }
 }
